@@ -54,9 +54,40 @@ try{
 //find the form
 await driver.get('https://www.youtube.com/')
 await delay(2000)
-let search = await driver.findElement(By.id('search-input'))
-let searchInput = await search.findElement(By.css('input[type="text"]'));
+//let search = await driver.findElement(By.id('search-input'))
+let searchInput = await driver.findElement(By.xpath('/html/body/ytd-app/div[1]/div/ytd-masthead/div[4]/div[2]/ytd-searchbox/form/div[1]/div[1]/input'))
 await searchInput.sendKeys('meat', Key.RETURN)
+await delay(10000)
+
+
+
+
+
+
+//find the element
+
+//assert
+
+}catch(e){
+console.log(e)
+
+}finally{
+await driver.quit();
+}
+
+}
+
+)();
+(async function thirdTest() {
+let driver = new Builder().forBrowser(Browser.EDGE).build();
+try{
+//define the driver
+//find the form
+await driver.get('https://www.walmart.com/')
+await delay(2000)
+//let search = await driver.findElement(By.id('search-input'))
+let searchInput = await driver.findElement(By.xpath('/html/body/div/div[1]/div/span/header/form/div/input'))
+await searchInput.sendKeys('shoes', Key.RETURN)
 await delay(10000)
 
 
